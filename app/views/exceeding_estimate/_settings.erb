@@ -1,0 +1,23 @@
+<table width="100%">
+  first=<%= Issue.first.message_of_exceeding_estimate %>
+  last=<%= Issue.last.message_of_exceeding_estimate %>
+  <tbody>
+    <tr>
+      <th>Для каких ролей присылаем уведомления</th>
+      <th>Допуск, по которому можно превышать (+X) или не допускать превышения (-X)</th>
+    </tr>
+    <tr>
+      <td>
+        <%= select_tag("settings[roles]", options_from_collection_for_select(Role.all, :id, :name, settings[:roles]), { multiple: true, style: 'width: 100%; height: 200px;' }) %>
+        <em class="info">Отмеченые роли не будут видеть маркер</em>
+        <em class="info" style='color: red;'>Если роли не указаны, плагин не работает!</em>
+      </td>
+
+      <td valign='top'>
+        <%= text_field_tag("settings[limit]", settings[:limit], :style => 'width: 100%;') %>
+        <em class="info">default: 0</em>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
