@@ -9,7 +9,7 @@
   * cd ...redmine/plugins/
   * git clone https://github.com/mrzigo/exceeding_estimate.git
   * cd ...redmine/
-  * rake redmine:plugins:migrate
+  * RAILS_ENV=production rake redmine:plugins:migrate 
 3. Перезапустить редмайн
 4. Зайти в настройки плагина (your.redmine.host/settings/plugin/exceeding_estimate)
 5. Обязательно указать роли, которым необходимо отправлять письма (если роли не указаны, плагин не работает)
