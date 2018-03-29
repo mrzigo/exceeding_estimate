@@ -10,6 +10,14 @@ module ExceedingEstimate
     module InstanceMethods
       def message_status_check
         if self.estimated_internal != Issue.find_by_id(id).try(:estimated_internal) # изменилась оценка
+          # puts '!!! ОЦЕНКа изменилась!'
+          # puts '!!! с'
+          # puts "!!! #{Issue.find_by_id(id).try(:estimated_internal)}"
+          # puts '!!! на'
+          # puts "!!! #{self.estimated_internal}"
+          # puts "!!! запись новая?#{self.new_record?}"
+          # puts '!!!'
+          return if self.new_record?
           self.update_column(:message_of_exceeding_estimate, false)
         end
       end
