@@ -1,6 +1,6 @@
 = exceeding_estimate
 
-Добавляет отправку писем выбранным ролям в проекте при привышении трудозатрат.
+Добавляет отправку писем выбранным ролям в проекте при превышении трудозатрат.
 Модуль зависит от https://github.com/DigitalWand/efforts
 
 == Установка
@@ -9,7 +9,7 @@
   * cd ...redmine/plugins/
   * git clone https://github.com/mrzigo/exceeding_estimate.git
   * cd ...redmine/
-  * RAILS_ENV=production rake redmine:plugins:migrate 
+  * RAILS_ENV=production rake redmine:plugins:migrate
 3. Перезапустить редмайн
 4. Зайти в настройки плагина (your.redmine.host/settings/plugin/exceeding_estimate)
 5. Обязательно указать роли, которым необходимо отправлять письма (если роли не указаны, плагин не работает)
